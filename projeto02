@@ -1,0 +1,43 @@
+// Variáveis;
+let vitorias = 15; // altere aqui para testar outros valores
+let derrotas = 4;
+
+// Mensagem de erro para valores inválidos
+const msg =
+  'Número de vitórias ou de derrotas inválido, mude para algum número maior que 0';
+
+// Função que retorna o saldo de Rankeada
+// Função que retorna o saldo de Rankeadas
+function rankingDoJogador(quantVitorias, quantDerrotas) {
+  return quantVitorias - quantDerrotas;
+}
+
+// Função que retorna o nível do jogador de acordo com o número de vitórias
+function calcularNivel(quantVitorias) {
+  if (quantVitorias < 10) {
+    return 'Ferro';
+  } else if (quantVitorias >= 11 && quantVitorias <= 20) {
+    return 'Bronze';
+  } else if (quantVitorias >= 21 && quantVitorias <= 50) {
+    return 'Prata';
+  } else if (quantVitorias >= 51 && quantVitorias <= 80) {
+    return 'Ouro';
+  } else if (quantVitorias >= 81 && quantVitorias <= 90) {
+    return 'Diamante';
+  } else if (quantVitorias >= 91 && quantVitorias <= 100) {
+    return 'Lendário';
+  } else if (quantVitorias >= 101) {
+    return 'Imortal';
+  }
+}
+
+// Verificação dos valores de entrada
+if (vitorias < 0 || derrotas < 0) {
+  console.log(msg);
+} else {
+  let saldoDeRankeadas = rankingDoJogador(vitorias, derrotas);
+  let nivelJogador = calcularNivel(vitorias);
+  console.log(
+    `O Herói tem de saldo de ${saldoDeRankeadas} está no nível de ${nivelJogador}`,
+  );
+}
