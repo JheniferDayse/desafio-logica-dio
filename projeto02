@@ -41,3 +41,4 @@ if (vitorias < 0 || derrotas < 0) {
     `O Herói tem de saldo de ${saldoDeRankeadas} está no nível de ${nivelJogador}`,
   );
 }
+
